@@ -9,6 +9,13 @@ import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+import { UploadComponent } from './upload/upload.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +24,17 @@ import { SignupComponent } from './auth/signup/signup.component';
     ProductComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CartComponent,
+    UploadComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
