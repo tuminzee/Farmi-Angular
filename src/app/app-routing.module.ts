@@ -9,6 +9,7 @@ import { UploadComponent } from './upload/upload.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { FarmerproductsComponent } from './farmerproducts/farmerproducts.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { GuideComponent } from './guide/guide.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,9 @@ const routes: Routes = [
   },
   {
     path: 'farmerproducts', component: FarmerproductsComponent
+  },
+  {
+    path: 'guide', component: GuideComponent
   }
 ];
 
