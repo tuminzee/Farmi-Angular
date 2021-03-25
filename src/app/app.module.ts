@@ -17,6 +17,7 @@ import { UploadComponent } from './upload/upload.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { FarmerproductsComponent } from './farmerproducts/farmerproducts.component';
+import { GuideComponent } from './guide/guide.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FarmerproductsComponent } from './farmerproducts/farmerproducts.compone
     UploadComponent,
     CheckoutComponent,
     ComplaintComponent,
-    FarmerproductsComponent
+    FarmerproductsComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,
