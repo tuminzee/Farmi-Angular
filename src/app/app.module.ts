@@ -15,6 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 import { UploadComponent } from './upload/upload.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ComplaintComponent } from './complaint/complaint.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     SignupComponent,
     CartComponent,
     UploadComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ComplaintComponent
   ],
   imports: [
     BrowserModule,

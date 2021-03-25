@@ -6,6 +6,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { UploadComponent } from './upload/upload.component';
+import { ComplaintComponent } from './complaint/complaint.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'checkout', component: CheckoutComponent
+  },
+  {
+    path: 'complaint', component: ComplaintComponent
   }
 ];
 
