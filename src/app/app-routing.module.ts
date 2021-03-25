@@ -8,6 +8,7 @@ import { ProductComponent } from './product/product.component';
 import { UploadComponent } from './upload/upload.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { FarmerproductsComponent } from './farmerproducts/farmerproducts.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'signup', component: SignupComponent
   },
   {
     path: 'upload', component: UploadComponent
