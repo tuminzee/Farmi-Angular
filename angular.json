@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Farmi-Angular": {
+    "angular-registration-login-example": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Farmi-Angular",
+            "outputPath": "dist/angular-registration-login-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -40,6 +43,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -62,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Farmi-Angular:build"
+            "browserTarget": "angular-registration-login-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Farmi-Angular:build:production"
+              "browserTarget": "angular-registration-login-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Farmi-Angular:build"
+            "browserTarget": "angular-registration-login-example:build"
           }
         },
         "test": {
@@ -88,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           }
@@ -110,16 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Farmi-Angular:serve"
+            "devServerTarget": "angular-registration-login-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Farmi-Angular:serve:production"
+              "devServerTarget": "angular-registration-login-example:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "Farmi-Angular"
+    }},
+  "defaultProject": "angular-registration-login-example"
 }
