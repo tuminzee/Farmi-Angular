@@ -1,0 +1,87 @@
+<!--
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Name</label>
+    <div class="col-8 pr-0">
+      <input class="form-control pr-0" type="text" value="Product Name" formControlName="name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Description</label>
+    <div class="col-8 pr-0">
+      <input class="form-control pr-0" type="text" value="Product Description" formControlName="desc">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Price</label>
+    <div class="col-8 pr-0">
+      <input class="form-control pr-0" type="number" value="Product Price" formControlName="price">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-4 col-form-label">Stock</label>
+    <div class="col-8 pr-0">
+      <input class="form-control pr-0" type="number" value="Product Stock" formControlName="stock">
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!uploadForm.valid">Submit</button>
+</form>
+ -->
+
+
+ <div class="container">
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row p-3">
+
+      <div class="form-row ">
+        <div class="form-group col-md-6">
+          <label for="name" class="form-label col-lg-12">Product Name</label>
+          <input type="text" class="form-control col-lg-12" formControlName="name" placeholder="Potato" autocomplete>
+
+          <div *ngIf="uploadForm.get('name').invalid && (uploadForm.get('name').dirty || uploadForm.get('name').touched)" class="alert alert-danger" role="alert">
+            Product Name is required
+          </div>
+
+        </div>
+        <div class="form-group col-md-6">
+          <label for="price" class="form-label col-lg-12">Product Price/Kg</label>
+          <input type="number" class="form-control col-lg-12" formControlName="price" placeholder="45">
+
+          <div *ngIf="uploadForm.get('price').invalid && (uploadForm.get('price').dirty || uploadForm.get('price').touched)" class="alert alert-danger" role="alert">
+            Product price is required
+          </div>
+
+        </div>
+        <div class="form-group col-md-6">
+          <label for="stock" class="form-label col-lg-12">Stock</label>
+          <input type="number" class="form-control col-lg-12" formControlName="stock" placeholder="100">
+
+          <div *ngIf="uploadForm.get('stock').invalid && (uploadForm.get('stock').dirty || uploadForm.get('stock').touched)" class="alert alert-danger" role="alstockert">
+            Product stock is required
+          </div>
+        </div>
+
+        <div class="from-group col-md-6">
+          <label for="image"class="form-label col-lg-12" for="customFile">Upload Image*</label>
+          <input type="file" class="form-control col-lg-12" id="image" />
+        </div>
+
+        <div class="form-group col-lg-12 mt-3">
+          <label for="comment">Product Description</label>
+          <textarea class="form-control col-lg-12" rows="5" formControlName="desc"></textarea>
+
+          <div *ngIf="uploadForm.get('desc').invalid && (uploadForm.get('desc').dirty || uploadForm.get('desc').touched)" class="alert alert-danger" role="alstockert">
+            Product Description is required
+          </div>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <button type="submit" class=" btn btn-primary padding-top" [disabled]="!uploadForm.valid" >Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

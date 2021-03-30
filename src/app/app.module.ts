@@ -12,6 +12,14 @@ import { AppComponent } from './app.component';
 import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
 
+import { CartComponent } from './cart/cart.component';
+import { UploadProductComponent } from './upload-product/upload-product.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ComplaintComponent } from './complaint/complaint.component';
+import { HeaderComponent } from './common/header/header.component';
+import { ProductsComponent } from './products/products.component';
+import { GuideComponent } from './guide/guide.component';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -22,7 +30,14 @@ import { HomeComponent } from './home';
     declarations: [
         AppComponent,
         AlertComponent,
-        HomeComponent
+        HomeComponent,
+        HeaderComponent,
+        ProductsComponent,
+        CartComponent,
+        UploadProductComponent,
+        CheckoutComponent,
+        ComplaintComponent,
+        GuideComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

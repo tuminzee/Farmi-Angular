@@ -1,0 +1,35 @@
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+    <!-- <div class="col-md-10 p-2" *ngFor="let product of products"> -->
+    <div class="col-md-10 p-2">
+      <div class="row p-2 bg-white border rounded">
+        <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
+            src="https://www.verywellhealth.com/thmb/sCusJsIGUJ2Son6fYOIPihE55RM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/the-wheat-allergy-diet-guide-1324279-primary-recirc-70ef0114e17e4f7b9a1faeab8b516e1e.jpg">
+        </div>
+        <div class="col-md-6 mt-1">
+          <!-- <h5>{{product.name | uppercase}}</h5> -->
+          <h5>Name</h5>
+          <!-- <p>{{product.desc}}</p> -->
+          <p>Desc</p>
+          <p>Owner</p>
+        </div>
+        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+          <div class="d-flex flex-row align-items-center">
+            <h4 class="mr-1">Price ₹ 100</h4>
+          </div>
+          <h6 class="text-success">Free shipping</h6>
+          <div class="d-flex">
+            <button
+              class="btn btn-outline-danger btn-sm mt-2" type="button">Remove from cart</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <button class="btn btn-primary offset-1 mt-3" routerLink="/checkout">Checkout</button>
+</div>
+
