@@ -16,22 +16,22 @@ import { CartComponent } from './cart/cart.component';
 import { UploadProductComponent } from './upload-product/upload-product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ComplaintComponent } from './complaint/complaint.component';
-import { HeaderComponent } from './common/header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { GuideComponent } from './guide/guide.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        CommonModule
     ],
     declarations: [
         AppComponent,
         AlertComponent,
         HomeComponent,
-        HeaderComponent,
         ProductsComponent,
         CartComponent,
         UploadProductComponent,
