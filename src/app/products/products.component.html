@@ -1,1 +1,39 @@
-<p>products works!</p>
+
+
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+      <div class="col-md-10 p-2" *ngFor="let product of products">
+
+        <div class="row p-2 bg-white border rounded">
+          <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://www.verywellhealth.com/thmb/sCusJsIGUJ2Son6fYOIPihE55RM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/the-wheat-allergy-diet-guide-1324279-primary-recirc-70ef0114e17e4f7b9a1faeab8b516e1e.jpg"></div>
+          <div class="col-md-6 mt-1">
+              <h5>{{product.name | uppercase}}</h5>
+              <p>{{product.desc}}</p>
+              <p>product by <b>{{ product.productOwnerName }}</b></p>
+          </div>
+          <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+              <div class="d-flex flex-row align-items-center">
+                  <h4 class="mr-1">Price ₹{{ product.price }}</h4>
+              </div>
+              <h6 class="text-success">Free shipping</h6>
+              <div class="d-flex flex-column mt-4">
+                <label for="quantity">Quantity (KG):</label>
+                <input type="number" id="quantity" name="quantity" min="1" class="mb-3" [(ngModel)]="quantity">
+                <!-- <button class="btn btn-primary btn-sm" type="button" (click)="onBuyNow(product)" >Buy Now</button>
+                <button class="btn btn-outline-primary" type="button" (click)="onAddToCart(product)"  >Add to cart</button> -->
+                <button [disabled]="loading" class="btn btn-primary m-2" (click)="onBuyNow(product)">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Buy Now
+              </button>
+              <button [disabled]="loading" class="btn btn-primary m-2" (click)="onAddToCart(product)">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Add to Cart
+            </button>
+             </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+

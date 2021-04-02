@@ -6,25 +6,24 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class OrderService {
   url = environment.apiUrl;
 
   constructor(
     private http:HttpClient
   ) { }
 
-  getProducts(){
-    return this.http.get(this.url+'/products/');
+  getOrders(){
+    return this.http.get(this.url+'/orders/');
   }
 
-  postProducts(product){
+  postOrder(order){
     // console.log(product);
-    return this.http.post(this.url+'/products/', product);
+    return this.http.post(this.url+'/orders/', order);
   }
 
-
-  getProductsById(id){
-    return this.http.get(this.url+`/products/${id}/`);
+  getOrdersById(id){
+    return this.http.get(this.url+`/orders/${id}/`);
   }
 
 }

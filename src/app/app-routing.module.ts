@@ -6,6 +6,8 @@ import { ComplaintComponent } from './complaint/complaint.component';
 import { GuideComponent } from './guide/guide.component';
 
 import { HomeComponent } from './home';
+import { MyProductsComponent } from './my-products/my-products.component';
+import { ProductsComponent } from './products/products.component';
 import { UploadProductComponent } from './upload-product/upload-product.component';
 import { AuthGuard } from './_helpers';
 import { Role } from './_models';
@@ -30,7 +32,17 @@ const routes: Routes = [
       component: CartComponent
     },
     {
-      path: 'upload', component: UploadProductComponent
+      path: 'products',
+      component: ProductsComponent
+    },
+    {
+      path: 'my-products',
+      component: MyProductsComponent
+    },
+    {
+      path: 'upload', component: UploadProductComponent,
+      canActivate: [AuthGuard],
+      data: { roles: [Role.Farmer] }
     },
     {
       path: 'checkout', component: CheckoutComponent
