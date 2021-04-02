@@ -54,19 +54,18 @@
             </div>
 
           </div>
-          <!-- <div class="form-group col-md-6">
-            <label for="stock" class="form-label col-lg-12">Stock</label>
-            <input type="number" class="form-control col-lg-12" formControlName="stock" placeholder="100">
 
-            <div *ngIf="uploadForm.get('stock').invalid && (uploadForm.get('stock').dirty || uploadForm.get('stock').touched)" class="alert alert-danger" role="alstockert">
-              Product stock is required
-            </div>
+          <div class="from-group col">
+
+            <ngx-dropzone (change)="onSelectDropZone($event)">
+              <ngx-dropzone-label>Upload Image here</ngx-dropzone-label>
+              <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemoveDropZone(f)">
+              </ngx-dropzone-image-preview>
+            </ngx-dropzone>
+
           </div>
 
-          <div class="from-group col-md-6">
-            <label for="image"class="form-label col-lg-12" for="customFile">Upload Image*</label>
-            <input type="file" class="form-control col-lg-12" id="image" />
-          </div> -->
+
 
           <div class="form-group col-lg-12 mt-3">
             <label for="comment">Product Description</label>

@@ -8,5 +8,6 @@ export class Order {
   buyerId: string;
   quantity: number;
   total: number;
+  productImageUrl: string
 
 }

@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 // used to create fake backend
 // import { fakeBackendProvider } from './_helpers';
@@ -27,7 +28,8 @@ import { MyProductsComponent } from './my-products/my-products.component'
         ReactiveFormsModule,
         HttpClientModule,
         AppRoutingModule,
-        CommonModule
+        CommonModule,
+        NgxDropzoneModule
     ],
     declarations: [
         AppComponent,
@@ -38,7 +40,8 @@ import { MyProductsComponent } from './my-products/my-products.component'
         UploadProductComponent,
         CheckoutComponent,
         ComplaintComponent,
-        GuideComponent,
+        GuideComponent
+,
         MyProductsComponent
     ],
     providers: [

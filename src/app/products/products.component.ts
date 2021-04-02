@@ -40,19 +40,21 @@ export class ProductsComponent implements OnInit {
   // }
 
   onAddToCart(product){
-    console.log({
-      productName: product.name,
-      productOwnerId: product.productOwnerId,
-      productOwnerName: product.productOwnerName,
-      productPrice: product.price,
-      quantity: this.quantity,
-      buyerId : this.accountService.userValue.id,
-      buyerName: this.accountService.userValue.firstName,
-      total : (this.quantity * product.price)
-    });
+    // console.log({
+    //   productName: product.name,
+    //   productOwnerId: product.productOwnerId,
+    //   productOwnerName: product.productOwnerName,
+
+    //   productPrice: product.price,
+    //   quantity: this.quantity,
+    //   buyerId : this.accountService.userValue.id,
+    //   buyerName: this.accountService.userValue.firstName,
+    //   total : (this.quantity * product.price)
+    // });
     this.orderService.postOrder({
       productName: product.name,
       productOwnerId: product.productOwnerId,
+      productImageUrl: product.productImageUrl,
       productOwnerName: product.productOwnerName,
       productPrice: product.price,
       quantity: this.quantity,
@@ -94,6 +96,7 @@ export class ProductsComponent implements OnInit {
       productName: product.name,
       productOwnerId: product.productOwnerId,
       productOwnerName: product.productOwnerName,
+      productImageUrl: product.productImageUrl,
       productPrice: product.price,
       quantity: this.quantity,
       buyerId : this.accountService.userValue.id,
