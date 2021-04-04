@@ -1,0 +1,24 @@
+
+
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+      <div class="col-md-10 p-2" *ngFor="let product of products">
+
+        <div class="row p-2 bg-white border rounded">
+          <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" [src]="product.productImageUrl"></div>
+          <div class="col-md-6 mt-1">
+              <p>Product Name <b>{{product.name | uppercase}}</b></p>
+              <p>Product Desc <b>{{product.desc}}</b></p>
+              <p>product by <b>{{ product.productOwnerName }}</b></p>
+          </div>
+          <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+              <div class="d-flex flex-row align-items-center">
+                  <h4 class="mr-1">Price ₹{{ product.price }}</h4>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+

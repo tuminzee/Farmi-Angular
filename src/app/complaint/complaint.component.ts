@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-complaint',
   templateUrl: './complaint.component.html',
-  styleUrls: ['./complaint.component.css']
+  styleUrls: ['./complaint.component.less']
 })
 export class ComplaintComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

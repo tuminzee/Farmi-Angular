@@ -1,48 +1,56 @@
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+
+// used to create fake backend
+// import { fakeBackendProvider } from './_helpers';
 
 import { AppRoutingModule } from './app-routing.module';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './common/header/header.component';
-import { ProductComponent } from './product/product.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './_components';
+import { HomeComponent } from './home';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
-import { UploadComponent } from './upload/upload.component';
+import { UploadProductComponent } from './upload-product/upload-product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ComplaintComponent } from './complaint/complaint.component';
-import { FarmerproductsComponent } from './farmerproducts/farmerproducts.component';
+import { ProductsComponent } from './products/products.component';
 import { GuideComponent } from './guide/guide.component';
-
-
+import { CommonModule } from '@angular/common';;
+import { MyProductsComponent } from './my-products/my-products.component'
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ProductComponent,
-    HomeComponent,
-    LoginComponent,
-    SignupComponent,
-    CartComponent,
-    UploadComponent,
-    CheckoutComponent,
-    ComplaintComponent,
-    FarmerproductsComponent,
-    GuideComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        CommonModule,
+        NgxDropzoneModule
+    ],
+    declarations: [
+        AppComponent,
+        AlertComponent,
+        HomeComponent,
+        ProductsComponent,
+        CartComponent,
+        UploadProductComponent,
+        CheckoutComponent,
+        ComplaintComponent,
+        GuideComponent
+,
+        MyProductsComponent
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        // fakeBackendProvider
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { };
