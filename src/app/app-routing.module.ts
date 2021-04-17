@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { GuideComponent } from './guide/guide.component';
 
 import { HomeComponent } from './home';
 import { MyProductsComponent } from './my-products/my-products.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
 import { UploadProductComponent } from './upload-product/upload-product.component';
 import { AuthGuard } from './_helpers';
@@ -45,13 +45,13 @@ const routes: Routes = [
       data: { roles: [Role.Farmer] }
     },
     {
-      path: 'checkout', component: CheckoutComponent
-    },
-    {
       path: 'complaint', component: ComplaintComponent
     },
     {
       path: 'guide', component: GuideComponent
+    },
+    {
+      path: 'payment', component: PaymentComponent
     },
 
     // otherwise redirect to home

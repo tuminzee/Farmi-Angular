@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService, OrderService } from '@app/_services';
+import { Router } from '@angular/router';
+import { AccountService, CartService } from '@app/_services';
 
 @Component({
   selector: 'app-cart',
@@ -7,17 +8,24 @@ import { AccountService, OrderService } from '@app/_services';
   styleUrls: ['./cart.component.less']
 })
 export class CartComponent implements OnInit {
-  orders;
+  cartData;
 
   constructor(
-    private orderService: OrderService,
+    private cartService: CartService,
     private accountService: AccountService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.orderService.getOrdersById(this.accountService.userValue.id).subscribe(orders => {
-      this.orders = orders;
+    this.cartService.getCartsById(this.accountService.userValue.id).subscribe(cartData => {
+      this.cartData = cartData;
+      ;
     })
   }
+
+
+  onCheckout() {
+    this.router.navigateByUrl('/payment');
+ }
 
 }

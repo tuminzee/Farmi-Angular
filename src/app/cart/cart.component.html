@@ -1,20 +1,29 @@
 
 
+
 <div class="container mt-5 mb-5">
+
   <div class="d-flex justify-content-center row">
-      <div class="col-md-10 p-2" *ngFor="let order of orders">
+    <div class="row p-2 bg-white border rounded">
+      <p class="m-3">Continue to checkout</p>
+      <button type="button" class="btn btn-primary m-3" (click)="onCheckout()">checkout</button>
+    </div>
+
+
+
+      <div class="col-md-10 p-2" *ngFor="let cart of cartData">
 
         <div class="row p-2 bg-white border rounded">
-          <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" [src]="order.productImageUrl"></div>
+          <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" [src]="cart.productImageUrl"></div>
           <div class="col-md-6 mt-1">
-              <p>Product Name <b>{{order.productName | uppercase}}</b> </p>
-              <p>Product by <b>{{ order.productOwnerName }}</b></p>
-              <p>Price ₹ <b>{{ order.productPrice }}</b> </p>
-              <p>Quantity <b>{{ order.quantity }}</b> </p>
+              <p>Product Name <b>{{cart.productName | uppercase}}</b> </p>
+              <p>Product by <b>{{ cart.productOwnerName }}</b></p>
+              <p>Price ₹ <b>{{ cart.productPrice }}</b> </p>
+              <p>Quantity <b>{{ cart.quantity }}</b> </p>
           </div>
           <div class="align-items-center align-content-center col-md-3 border-left mt-1">
               <div class="d-flex flex-row align-items-center">
-                <h4 class="mr-1">Total ₹{{ order.total }}</h4>
+                <h4 class="mr-1">Total ₹{{ cart.total }}</h4>
             </div>
              </div>
           </div>

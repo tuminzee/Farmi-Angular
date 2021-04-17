@@ -15,12 +15,13 @@ import { HomeComponent } from './home';
 
 import { CartComponent } from './cart/cart.component';
 import { UploadProductComponent } from './upload-product/upload-product.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { ProductsComponent } from './products/products.component';
 import { GuideComponent } from './guide/guide.component';
 import { CommonModule } from '@angular/common';;
 import { MyProductsComponent } from './my-products/my-products.component'
+;
+import { PaymentComponent } from './payment/payment.component'
 @NgModule({
     imports: [
         BrowserModule,
@@ -38,11 +39,12 @@ import { MyProductsComponent } from './my-products/my-products.component'
         ProductsComponent,
         CartComponent,
         UploadProductComponent,
-        CheckoutComponent,
         ComplaintComponent,
         GuideComponent
 ,
         MyProductsComponent
+,
+        PaymentComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
