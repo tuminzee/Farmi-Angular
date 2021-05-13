@@ -1,0 +1,39 @@
+
+  <div class="container">
+    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row p-3">
+
+        <div class="form-row ">
+          <div class="form-group col-lg-12 mt-3">
+            <label for="name" class="form-label col-lg-12">Name</label>
+            <input type="text" class="form-control col-lg-12" formControlName="name" placeholder="Potato" autocomplete>
+
+            <div *ngIf="uploadForm.get('name').invalid && (uploadForm.get('name').dirty || uploadForm.get('name').touched)" class="alert alert-danger" role="alert">
+              Product Name is required
+            </div>
+
+          </div>
+
+          <div class="form-group col-lg-12 mt-3">
+            <label for="comment">Feedback Description</label>
+            <textarea class="form-control col-lg-12" rows="5" formControlName="desc"></textarea>
+
+            <div *ngIf="uploadForm.get('desc').invalid && (uploadForm.get('desc').dirty || uploadForm.get('desc').touched)" class="alert alert-danger" role="alstockert">
+              Product Description is required
+            </div>
+          </div>
+
+          <div class="form-group col-lg-4">
+            <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Submit
+            </button>
+          </div >
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+

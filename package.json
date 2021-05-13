@@ -20,6 +20,8 @@
         "@angular/platform-browser-dynamic": "^10.0.3",
         "@angular/router": "^10.0.3",
         "bson-objectid": "^2.0.1",
+        "html2canvas": "*",
+        "jspdf": "^2.3.1",
         "ngx-dropzone": "^3.0.0",
         "rxjs": "^6.5.5",
         "tslib": "^2.0.0",

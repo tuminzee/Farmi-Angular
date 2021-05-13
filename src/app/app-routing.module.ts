@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { ComplaintComponent } from './complaint/complaint.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { GuideComponent } from './guide/guide.component';
 
 import { HomeComponent } from './home';
 import { MyProductsComponent } from './my-products/my-products.component';
+import { OrdersComponent } from './orders/orders.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
+import { UploadFeedbackComponent } from './upload-feedback/upload-feedback.component';
 import { UploadProductComponent } from './upload-product/upload-product.component';
 import { AuthGuard } from './_helpers';
 import { Role } from './_models';
@@ -52,6 +55,15 @@ const routes: Routes = [
     },
     {
       path: 'payment', component: PaymentComponent
+    },
+    {
+      path: 'orders', component: OrdersComponent
+    },
+    {
+      path: 'feedback', component: FeedbackComponent
+    },
+    {
+      path: 'upload-feedback', component: UploadFeedbackComponent
     },
 
     // otherwise redirect to home

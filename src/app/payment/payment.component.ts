@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AccountService, CartService } from '@app/_services';
+import { AccountService, AlertService, CartService, OrderService } from '@app/_services';
+import { first } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-payment',
@@ -8,15 +10,19 @@ import { AccountService, CartService } from '@app/_services';
   styleUrls: ['./payment.component.less']
 })
 export class PaymentComponent implements OnInit {
+  loading = false;
   cartData: any;
   public total=0;
   private value;
+  private paymentDetails: String;
   uploadForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private cartService: CartService,
     private accountService: AccountService,
+    private orderService: OrderService,
+    private alertService: AlertService,
 
   ) {
     this.createForm();
@@ -30,7 +36,7 @@ export class PaymentComponent implements OnInit {
   }
 
   findsum(data){
-    debugger
+    // debugger
     this.value=data
     console.log(this.value);
     for(let j=0;j<data.length;j++){
@@ -54,7 +60,25 @@ export class PaymentComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.uploadForm.value);
+    this.orderService.postOrder({
+      buyedId: this.accountService.userValue.id,
+      buyerName: this.accountService.userValue.firstName,
+      orderDetails: JSON.stringify(this.cartData),
+      total: this.total
+    })
+    .pipe(first())
+    .subscribe({
+        next: () => {
+            this.alertService.success('Order Added Successful', { keepAfterRouteChange: false });
+            this.loading = false;
+        },
+        error: error => {
+            this.alertService.error(error);
+            this.loading = false;
+        }
+    });
   }
 
-}
+
+  }
+

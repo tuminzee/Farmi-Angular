@@ -22,6 +22,12 @@ import { CommonModule } from '@angular/common';;
 import { MyProductsComponent } from './my-products/my-products.component'
 ;
 import { PaymentComponent } from './payment/payment.component'
+;
+import { OrdersComponent } from './orders/orders.component'
+;
+import { FeedbackComponent } from './feedback/feedback.component'
+;
+import { UploadFeedbackComponent } from './upload-feedback/upload-feedback.component'
 @NgModule({
     imports: [
         BrowserModule,
@@ -30,7 +36,7 @@ import { PaymentComponent } from './payment/payment.component'
         HttpClientModule,
         AppRoutingModule,
         CommonModule,
-        NgxDropzoneModule
+        NgxDropzoneModule,
     ],
     declarations: [
         AppComponent,
@@ -40,12 +46,14 @@ import { PaymentComponent } from './payment/payment.component'
         CartComponent,
         UploadProductComponent,
         ComplaintComponent,
-        GuideComponent
+        GuideComponent,
+        MyProductsComponent,
+        PaymentComponent,
+        OrdersComponent
 ,
-        MyProductsComponent
+        FeedbackComponent
 ,
-        PaymentComponent
-    ],
+        UploadFeedbackComponent    ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

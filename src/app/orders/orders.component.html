@@ -1,0 +1,43 @@
+
+
+<div class="container" id="htmlData">
+  <div class="container mt-5 mb-5" >
+    <div class="d-flex justify-content-center row">
+        <div class="p-2 mt-3 border"  *ngFor="let order of orders">
+
+        <h5>Order by: {{order.buyerName}}</h5>
+        <div class="row">
+          <div class="col-md-10" *ngFor="let data of order.orderDetails">
+
+            <div class="row p-2 bg-white border rounded">
+              <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" [src]="data.productImageUrl" ></div>
+              <div class="col-md-6 mt-1">
+                  <h5>{{data.productName | uppercase}}</h5>
+                  <p>{{data.desc}}</p>
+                  <p>product by <b>{{ data.productOwnerName }}</b></p>
+              </div>
+              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                  <div class="d-flex flex-row align-items-center">
+                      <p class="mr-1">Price ₹{{ data.productPrice }}</p>
+                  </div>
+                  <div class="d-flex flex-column mt-4">
+                    <p class="mr-1">Quantity (KG): {{data.quantity}}</p>
+
+                 </div>
+              </div>
+          </div>
+          </div>
+          <div class="col-md-2 bg-white border rounded">
+            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+              <h3 class="mr-1">Total: {{order.totoal}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <button (click)="openPDF()">Download PDF</button>
+
+
+    </div>
+  </div>
+
+</div>

@@ -2,3 +2,4 @@
 export * from './alert.service';
 export * from './order.service';
 export * from './cart.service';
+export * from './feedback.service';
