@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService, AlertService, CartService, OrderService } from '@app/_services';
 import { first } from 'rxjs/operators';
 
@@ -14,7 +15,6 @@ export class PaymentComponent implements OnInit {
   cartData: any;
   public total=0;
   private value;
-  private paymentDetails: String;
   uploadForm: FormGroup;
 
   constructor(
@@ -23,6 +23,7 @@ export class PaymentComponent implements OnInit {
     private accountService: AccountService,
     private orderService: OrderService,
     private alertService: AlertService,
+    private router:Router
 
   ) {
     this.createForm();
@@ -77,6 +78,7 @@ export class PaymentComponent implements OnInit {
             this.loading = false;
         }
     });
+    this.router.navigate(['/orders']);
   }
 
 

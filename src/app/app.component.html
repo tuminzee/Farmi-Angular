@@ -54,10 +54,10 @@
           <a class="nav-item nav-link"routerLink="/users" routerLinkActive="active"  *ngIf="isAdmin" >Users</a>
         </li>
         <li>
-          <a class="nav-item nav-link"routerLink="/users" routerLinkActive="active"  *ngIf="isAdmin" >Products</a>
+          <a class="nav-item nav-link"routerLink="/products" routerLinkActive="active"  *ngIf="isAdmin" >Products</a>
         </li>
         <li>
-          <a class="nav-item nav-link"routerLink="/users" routerLinkActive="active"  *ngIf="isAdmin" >Orders</a>
+          <a class="nav-item nav-link"routerLink="/orders" routerLinkActive="active"  *ngIf="isAdmin" >Orders</a>
         </li>
         <li>
           <a class="nav-item nav-link"routerLink="/upload-feedback" routerLinkActive="active"  *ngIf="isBuyer || isFarmer" >Feedback</a>
@@ -71,7 +71,7 @@
 				</li>
 
         <li>
-          <a class="nav-link">[ {{ user.role }} ]</a>
+          <a class="nav-link">[ {{ user.firstName }} ]</a>
         </li>
 
 
